@@ -40,15 +40,19 @@ impl<'a> Iterator for Tokenizer<'a> {
 
         let token = match char_curr {
             None => return None,
-            Some('a'..='z' | 'A'..='Z') => {
+            Some('a'..='z' | 'A'..='Z' | '0'..='9') => {
                 let mut word = char_curr?.to_string();
 
                 while let Some(c) = self.text.peek() {
-                    if c.is_alphabetic() {
+                    if c.is_alphabetic() || c.is_ascii_digit() {
                         word.push(self.text.next().unwrap());
                     } else {
                         break;
                     }
+                }
+
+                if !word.is_empty() && word.chars().next().unwrap().is_ascii_digit() {
+                    panic!("can't start with number.")
                 }
 
                 match word.as_str() {

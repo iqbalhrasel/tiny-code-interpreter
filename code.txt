@@ -1,2 +1,4 @@
 let String name = "john";
+let String name2 = "doe";
 printer("my name is {{ name }}, Ok!");
+printer("my name is {{ name2 }}, Ok!");

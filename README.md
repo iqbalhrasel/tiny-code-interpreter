@@ -2,7 +2,7 @@
 A small experimental interpreter written in Rust. It is an small attempt to do this. I am trying to understand how an interpreter works. It has many limitations even in my existing code, but i am experimenting and exploring system programming
 
 ## Features
-- `Tokenizer` to Converts input text into meaningful tokens (keywords, identifiers, literals, etc.)
+- `Tokenizer` to convert input text into meaningful tokens (keywords, identifiers, literals, etc.)
 - `Parser` is to pull all the tokens from `Tokenizer`, Consumes tokens and builds structured expressions
 - `Interpreter` is to supply each line to `Parser` and Executes parsed expressions and maintains variable state
 
